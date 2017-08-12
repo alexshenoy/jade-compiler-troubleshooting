@@ -1,4 +1,7 @@
 import { app, BrowserWindow } from 'electron';
+import {enableLiveReload} from 'electron-compile';
+
+enableLiveReload();
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -12,7 +15,7 @@ const createWindow = () => {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadURL(`file://${__dirname}/index.html`);
+  mainWindow.loadURL(`file://${__dirname}/index.jade`);
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
